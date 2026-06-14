@@ -1,0 +1,246 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:    #1a1a1a;
+  --muted:  #666;
+  --rule:   #d8d3cc;
+  --bg:     #faf9f7;
+  --accent: #2a4a7f;
+  --max:    760px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Layout ── */
+header, main, footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header / Hero ── */
+header {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  align-items: start;
+  padding-top: 64px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--rule);
+  display: block;
+}
+
+.photo-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.bio h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.bio .title {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.bio p {
+  font-size: 14.5px;
+  color: #333;
+  max-width: 520px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+}
+
+.contact-links a:hover {
+  color: var(--accent);
+  text-decoration: none;
+  border-color: var(--accent);
+}
+
+/* ── Sections ── */
+main {
+  padding-top: 52px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+section h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── Research Interests ── */
+.interests-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.interests-list li {
+  font-size: 13px;
+  color: var(--accent);
+  background: #eef2f9;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ── Publications ── */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pub {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0 16px;
+  align-items: start;
+}
+
+.pub-year {
+  font-size: 12px;
+  color: var(--muted);
+  padding-top: 3px;
+  text-align: right;
+}
+
+.pub-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.pub-title a { color: var(--ink); }
+.pub-title a:hover { color: var(--accent); text-decoration: none; }
+
+.pub-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.pub-links {
+  margin-top: 5px;
+  display: flex;
+  gap: 12px;
+}
+
+.pub-links a {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+/* ── Teaching / Awards / Other ── */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0 16px;
+}
+
+.item-year {
+  font-size: 12px;
+  color: var(--muted);
+  padding-top: 2px;
+  text-align: right;
+}
+
+.item-title { font-size: 14.5px; }
+
+.item-sub {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── Mobile ── */
+@media (max-width: 560px) {
+  header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .bio p { max-width: 100%; }
+  .contact-links { justify-content: center; }
+
+  .pub { grid-template-columns: 1fr; }
+  .pub-year { text-align: left; }
+  .item { grid-template-columns: 1fr; }
+  .item-year { text-align: left; }
+}
