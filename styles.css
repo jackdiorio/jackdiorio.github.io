@@ -41,8 +41,7 @@ header {
 .photo,
 .photo-placeholder {
   width: 148px;
-  height: 148px;
-  border-radius: 50%;
+  height: 185px;
   object-fit: cover;
   display: block;
   flex-shrink: 0;
