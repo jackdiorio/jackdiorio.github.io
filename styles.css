@@ -24,37 +24,25 @@ a:hover { text-decoration: underline; }
 
 /* ── Header ── */
 header {
+  display: flex;
+  max-width: var(--max);
+  margin: 0 auto;
+  grid-template-columns: 148px 1fr;
+  gap: 36px;
+  align-items: start;
   background: var(--ink);
   color: #fff;
   padding: 52px 24px 44px;
 }
 
-.header-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 148px 1fr;
-  gap: 36px;
-  align-items: start;
-}
-
-.photo,
-.photo-placeholder {
-  width: 148px;
-  height: 185px;
+.photo {
+  width: 350px;
+  height: 250px;
   object-fit: cover;
   display: block;
   flex-shrink: 0;
 }
 
-.photo-placeholder {
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.5);
-  font-size: 12px;
-}
 
 .bio h1 {
   font-family: 'EB Garamond', serif;
@@ -183,13 +171,10 @@ section h2 {
   color: var(--ink);
 }
 
-.item-title a { color: var(--accent); }
-
 .item-badge {
   display: inline-block;
   font-size: 10px;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   background: var(--accent);
   color: #fff;
